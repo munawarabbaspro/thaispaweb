@@ -1,5 +1,5 @@
 # Thai Spa — thaispas.pk
-
+okkk
 React + Vite site, every page pre-rendered to static HTML (vite-react-ssg). You never edit page code to change
 facts: everything lives in `src/data/`.
 
