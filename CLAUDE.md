@@ -1,4 +1,4 @@
-# Thai Spa — thaispas.pk
+# Thai Spa — thaispa.pk
 
 A massage spa in Civic Center, Bahria Town Phase 4, Islamabad. The site's job is
 phone calls and WhatsApp bookings from people searching locally.

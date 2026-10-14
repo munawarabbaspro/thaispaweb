@@ -11,7 +11,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 
-const DOMAIN = 'https://thaispas.pk'
+const DOMAIN = 'https://www.thaispa.pk'
 const dist = path.resolve('dist')
 const stateFile = path.resolve('scripts/sitemap-lastmod.json')
 const today = new Date().toISOString().slice(0, 10)

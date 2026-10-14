@@ -18,7 +18,7 @@ for (const f of walk(dist)) {
   else if (title.length > 70) bad(`title is ${title.length} chars`)
   if (!desc) bad('no meta description')
   else if (desc.length < 70 || desc.length > 170) bad(`description is ${desc.length} chars`)
-  if (!/<link[^>]*rel="canonical"[^>]*href="https:\/\/thaispas\.pk/.test(h)) bad('canonical missing or not absolute')
+  if (!/<link[^>]*rel="canonical"[^>]*href="https:\/\/www\.thaispa\.pk/.test(h)) bad('canonical missing or not absolute')
   if (!/<meta[^>]*property="og:image"/.test(h)) bad('og:image missing')
   const h1s = (h.match(/<h1[\s>]/g) || []).length
   if (h1s !== 1) bad(`${h1s} <h1> tags`)

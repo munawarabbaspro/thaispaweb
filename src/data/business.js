@@ -2,11 +2,11 @@ import { minPrice, maxPrice } from './services'
 
 export const business = {
   name: 'Thai Spa',
-  domain: 'https://thaispas.pk',
+  domain: 'https://www.thaispa.pk',
   phone: '+92 347 3200319',
   phoneHref: 'tel:+923473200319',
   whatsapp: '923473200319', // OWNER: confirm this number is on WhatsApp
-  email: 'info@thaispas.pk', // OWNER: create this mailbox, or change it
+  email: 'info@thaispa.pk', // OWNER: create this mailbox, or change it
   address: {
     street: 'Civic Center, Bahria Town Phase 4',
     landmark: 'Near Anarkali Hotel',

@@ -30,13 +30,13 @@ for (const f of htmlFiles) {
     if (!url || /^(tel:|mailto:|data:|javascript:)/.test(url)) continue
     checked++
     if (/^https?:\/\//.test(url)) {
-      if (!url.startsWith('https://thaispas.pk')) {
+      if (!url.startsWith('https://www.thaispa.pk')) {
         const host = new URL(url).host
         external.set(host, (external.get(host) || 0) + 1)
         if (url.startsWith('http://')) bad(`insecure http link: ${url.slice(0, 70)}`)
         continue
       }
-      url = url.replace('https://thaispas.pk', '') || '/'
+      url = url.replace('https://www.thaispa.pk', '') || '/'
     }
     if (url.startsWith('#')) {
       if (url !== '#' && !ids.has(url.slice(1))) bad(`anchor ${url} has no matching id`)
