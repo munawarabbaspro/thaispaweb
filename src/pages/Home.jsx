@@ -150,7 +150,7 @@ export default function Home() {
         </div>
         <div className="luxury-stage">
           <p className="eyebrow">From thirty minutes</p>
-          <span className="mega" aria-label="RELIEF">
+          <span className="mega" role="img" aria-label="RELIEF">
             {[...'RELIEF'].map((c, i) => <span key={i} aria-hidden="true">{c}</span>)}
           </span>
           <Media seed={4} {...img('luxury')} />

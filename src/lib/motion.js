@@ -198,36 +198,68 @@ function playIntro(hero) {
     })
 }
 
+// Phones and tablets: the same moves as the desktop scenes (photos sliding in, big word rising, cards zooming
+// out), tied to scroll position but without pinning, so scrolling stays natural on touch screens.
+function mobileScenes() {
+  const scrub = (trigger, start = 'top 92%', end = 'top 42%') => ({ trigger, start, end, scrub: 0.6 })
+
+  gsap.fromTo('.premium .split-img', { xPercent: 38, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ease: 'none', scrollTrigger: scrub('.premium .split-img') })
+
+  gsap.fromTo('.instant-img', { xPercent: -38, scale: 1.12, autoAlpha: 0 }, { xPercent: 0, scale: 1, autoAlpha: 1, ease: 'none', scrollTrigger: scrub('.instant-img') })
+  gsap.from('.instant-text > *', { x: 50, autoAlpha: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.instant-text', start: 'top 88%' } })
+
+  gsap.from('.mega span', { yPercent: 70, autoAlpha: 0, stagger: 0.06, ease: 'none', scrollTrigger: scrub('.luxury-stage', 'top 95%', 'top 55%') })
+  gsap.fromTo('.luxury-stage .media-ph, .luxury-stage img', { xPercent: 34, autoAlpha: 0 }, { xPercent: 0, autoAlpha: 1, ease: 'none', scrollTrigger: scrub('.luxury-stage', 'top 90%', 'top 40%') })
+  gsap.from('.lux-stats li', { y: 30, autoAlpha: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: '.luxury-stage', start: 'top 70%' } })
+
+  gsap.from('.feature-grid', { scale: 1.22, transformOrigin: '50% 25%', ease: 'none', scrollTrigger: scrub('.features', 'top 90%', 'top 20%') })
+}
+
 // Full homepage choreography. Pinned scenes on desktop, lighter reveals on tablet and phone.
 export function initHomeMotion() {
   if (reducedMotion()) return revealWithObserver()
 
-  document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'))
+  // 1. The hero + intro start right away.
   const ctx = gsap.context(() => {
     const hero = heroIntro()
     heroScroll()
     playIntro(hero)
-    const mm = gsap.matchMedia()
-    mm.add('(min-width: 961px) and (min-height: 620px)', () => {
-      premiumScene()
-      instantScene()
-      luxuryScene()
-      reveal(['.fleet .section-head', '.cat-card', '.sub-head', '.fleet .car-tile', '.fleet .center-cta'])
-      reveal(['.why .section-head', '.b', '.steps-wrap .section-head', '.step'])
-      featuresScene()
-      reveal(['.home-packages .section-head', '.pkg-mini', '.booking-inner'])
-      faqScene()
-    })
-    mm.add('(max-width: 960px), (max-height: 619px)', () => {
-      reveal(['.ticker', '.split-text', '.split-img', '.instant-img', '.instant-text', '.luxury-head', '.luxury-stage',
-        '.section-head', '.cat-card', '.car-tile', '.f-card', '.stats', '.pkg-mini', '.booking-inner', '.b', '.step'])
-      document.querySelectorAll('.lux-stats [data-count]').forEach((el) => countUp(el, null, { trigger: el, start: 'top 90%' }))
-      faqScene()
-    })
   })
+
+  // 2. The scroll scenes are set up as soon as the browser is idle (the intro keeps scrolling locked for ~3s,
+  //    and below-the-fold content is hidden by CSS until then, with a 4s failsafe).
+  const setupScenes = () => {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'))
+    ctx.add(() => {
+      const mm = gsap.matchMedia()
+      mm.add('(min-width: 961px) and (min-height: 620px)', () => {
+        premiumScene()
+        instantScene()
+        luxuryScene()
+        reveal(['.fleet .section-head', '.cat-card', '.sub-head', '.fleet .car-tile', '.fleet .center-cta'])
+        reveal(['.why .section-head', '.b', '.steps-wrap .section-head', '.step'])
+        featuresScene()
+        reveal(['.home-packages .section-head', '.pkg-mini', '.booking-inner'])
+        faqScene()
+      })
+      mm.add('(max-width: 960px), (max-height: 619px)', () => {
+        mobileScenes()
+        reveal(['.ticker', '.split-text', '.luxury-head',
+          '.section-head', '.cat-card', '.car-tile', '.f-card', '.stats', '.pkg-mini', '.booking-inner', '.b', '.step'])
+        document.querySelectorAll('.lux-stats [data-count]').forEach((el) => countUp(el, null, { trigger: el, start: 'top 90%' }))
+        faqScene()
+      })
+    })
+    ScrollTrigger.refresh()
+  }
+  const ric = window.requestIdleCallback || ((fn) => setTimeout(fn, 250))
+  const cancelRic = window.cancelIdleCallback || clearTimeout
+  const idle = ric(setupScenes, { timeout: 800 })
+
   const onLoad = () => ScrollTrigger.refresh()
   window.addEventListener('load', onLoad)
   return () => {
+    cancelRic(idle)
     window.removeEventListener('load', onLoad)
     ctx.revert()
   }

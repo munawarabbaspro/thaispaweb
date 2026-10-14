@@ -151,12 +151,6 @@ a.sr-only:focus { position: fixed; left: 16px; top: 16px; z-index: 200; width: a
 @keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
 .js .reveal { animation: reveal-failsafe .01s linear 4s forwards; }
 
-/* Phones/tablets: keep the soft glow orbs but stop their 40s drift (invisible to the eye, costly to paint) */
-@media (max-width: 960px) {
-  .c { animation: none; will-change: auto; }
-  .fog { display: none; }
-}
-
 /* Ticker slider: slides stacked in one cell, the active one is shown */
 .ticker { display: flex; flex-direction: column; align-items: center; gap: 18px; cursor: grab; touch-action: pan-y; user-select: none; }
 .ticker:active { cursor: grabbing; }

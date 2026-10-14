@@ -17,7 +17,7 @@ for (const f of walk(dist)) {
   const v = h.match(viewport)?.[0] || '<meta name="viewport" content="width=device-width, initial-scale=1">'
   h = h.replace(charset, '').replace(viewport, '').replace(/<head([^>]*)>/i, `<head$1>${c}${v}`)
   // non-blocking Google Fonts
-  h = h.replace(/<link\s+href="(https:\/\/fonts\.googleapis\.com\/css2[^"]+)"\s+rel="stylesheet"\s*\/?>/i, (_, href) =>
+  h = h.replace(/<link\s+href="(https:\/\/fonts\.googleapis\.com\/css2[^"]+)"\s+rel="stylesheet"\s*\/?>/gi, (_, href) =>
     `<link rel="preload" as="style" href="${href}" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="${href}"></noscript>`)
   fs.writeFileSync(f, h)
 }
