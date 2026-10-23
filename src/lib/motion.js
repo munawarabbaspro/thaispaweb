@@ -153,13 +153,14 @@ function faqScene() {
 }
 
 // Typewriter name in the centre -> flies into the header logo -> hero builds in.
-function playIntro(hero) {
+function playIntro(hero, onDone) {
   const root = document.documentElement
   const loader = document.querySelector('.loader')
   const logo = document.querySelector('.site-header .logo')
   if (!root.classList.contains('intro') || !loader || !logo) {
     root.classList.remove('intro')
     hero.play()
+    onDone?.()
     return
   }
 
@@ -169,6 +170,7 @@ function playIntro(hero) {
     root.classList.remove('intro')
     root.style.overflow = ''
     activeLenis?.start()
+    onDone?.()
   }
 
   gsap.set(logo, { autoAlpha: 0 })
@@ -219,17 +221,17 @@ function mobileScenes() {
 export function initHomeMotion() {
   if (reducedMotion()) return revealWithObserver()
 
-  // 1. The hero + intro start right away.
-  const ctx = gsap.context(() => {
-    const hero = heroIntro()
-    heroScroll()
-    playIntro(hero)
-  })
+  let ctx
+  let idle = 0
+  let fallback = 0
+  let scheduled = false
 
-  // 2. The scroll scenes are set up as soon as the browser is idle (the intro keeps scrolling locked for ~3s,
-  //    and below-the-fold content is hidden by CSS until then, with a 4s failsafe).
+  // The scroll scenes are set up AFTER the intro has finished: scrolling is locked until then, and below-the-fold
+  // content is hidden by CSS meanwhile (with a long failsafe), so nothing visible changes, but the heavy
+  // ScrollTrigger work no longer competes with the page load.
   const setupScenes = () => {
     ctx.add(() => {
+      heroScroll()
       const mm = gsap.matchMedia()
       mm.add('(min-width: 961px) and (min-height: 620px)', () => {
         document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'))
@@ -254,13 +256,26 @@ export function initHomeMotion() {
     })
     ScrollTrigger.refresh()
   }
-  const ric = window.requestIdleCallback || ((fn) => setTimeout(fn, 250))
+  const ric = window.requestIdleCallback || ((fn) => setTimeout(fn, 120))
   const cancelRic = window.cancelIdleCallback || clearTimeout
-  const idle = ric(setupScenes, { timeout: 800 })
+  const schedule = () => {
+    if (scheduled) return
+    scheduled = true
+    clearTimeout(fallback)
+    idle = ric(setupScenes, { timeout: 600 })
+  }
+
+  // 1. The hero + intro start right away; the scenes follow when the intro is done.
+  ctx = gsap.context(() => {
+    const hero = heroIntro()
+    playIntro(hero, schedule)
+  })
+  fallback = setTimeout(schedule, 8000) // slow device or interrupted intro: never leave the page without its scenes
 
   const onLoad = () => ScrollTrigger.refresh()
   window.addEventListener('load', onLoad)
   return () => {
+    clearTimeout(fallback)
     cancelRic(idle)
     window.removeEventListener('load', onLoad)
     ctx.revert()

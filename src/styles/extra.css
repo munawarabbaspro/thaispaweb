@@ -155,7 +155,7 @@ a.sr-only:focus { position: fixed; left: 16px; top: 16px; z-index: 200; width: a
 
 /* If the animation script never loads, never leave content invisible */
 @keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
-.js .reveal { animation: reveal-failsafe .01s linear 4s forwards; }
+.js .reveal { animation: reveal-failsafe .01s linear 10s forwards; }
 
 /* Ticker slider: slides stacked in one cell, the active one is shown */
 .ticker { display: flex; flex-direction: column; align-items: center; gap: 18px; cursor: grab; touch-action: pan-y; user-select: none; }
