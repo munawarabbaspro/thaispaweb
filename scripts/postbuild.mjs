@@ -9,6 +9,14 @@ import { execFileSync } from 'node:child_process'
 const dist = path.resolve('dist')
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.html') ? [path.join(d, e.name)] : []))
 
+// Inline the site stylesheet into every page (one fewer request in the critical path; ~13 KB gzipped per page).
+const cssFiles = fs.readdirSync(path.join(dist, 'assets')).filter((n) => n.endsWith('.css'))
+const cssByName = Object.fromEntries(cssFiles.map((n) => [n, fs.readFileSync(path.join(dist, 'assets', n), 'utf8')]))
+const inlineCss = (html) =>
+  html.replace(/<link\s+rel="stylesheet"[^>]*?href="\/assets\/([^"]+\.css)"[^>]*>/g, (tag, name) =>
+    cssByName[name] && !cssByName[name].includes('</style') ? `<style data-inlined="${name}">${cssByName[name]}</style>` : tag,
+  )
+
 for (const f of walk(dist)) {
   let h = fs.readFileSync(f, 'utf8')
   const charset = /<meta charset="UTF-8"\s*\/?>/i
@@ -19,6 +27,7 @@ for (const f of walk(dist)) {
   // non-blocking Google Fonts
   h = h.replace(/<link\s+href="(https:\/\/fonts\.googleapis\.com\/css2[^"]+)"\s+rel="stylesheet"\s*\/?>/gi, (_, href) =>
     `<link rel="preload" as="style" href="${href}" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="${href}"></noscript>`)
+  h = inlineCss(h)
   fs.writeFileSync(f, h)
 }
 // One URL form for Netlify: /about serves the page (200), /about/ redirects to /about, so canonical, sitemap and links all agree.

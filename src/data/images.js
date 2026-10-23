@@ -29,8 +29,14 @@ const spec = {
 }
 
 // Spread into <Media {...img('hero')} />. Unknown names fall back to the drawn graphic.
+// Widths of the smaller copies made by scripts/make-responsive-images.mjs
+const SMALL = [480, 800, 1200]
+
+export const imgSrcSet = (name, width) =>
+  [...SMALL.filter((w) => w < width).map((w) => `/images/${name}-${w}.webp ${w}w`), `/images/${name}.webp ${width}w`].join(', ')
+
 export const img = (name) => {
   const s = spec[name]
   if (!s) return {}
-  return { src: `/images/${name}.webp`, width: s[0], height: s[1], alt: s[2] }
+  return { src: `/images/${name}.webp`, srcSet: imgSrcSet(name, s[0]), width: s[0], height: s[1], alt: s[2] }
 }

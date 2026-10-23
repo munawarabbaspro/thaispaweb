@@ -19,25 +19,32 @@ function Contours({ dark, seed = 0 }) {
   )
 }
 
-export default function Media({ src, alt = '', width, height, dark = false, eager = false, seed = 0 }) {
+// `srcSet` lists real files (name-480.webp ... name.webp), made by scripts/make-responsive-images.mjs.
+// `sizes` tells the browser how wide the photo is shown, so a phone downloads the small file.
+export default function Media({
+  src,
+  srcSet,
+  sizes = '(max-width: 720px) 100vw, 50vw',
+  alt = '',
+  width,
+  height,
+  dark = false,
+  eager = false,
+  seed = 0,
+}) {
   if (src) {
-    // Use <picture> to serve WebP when supported and provide srcSet for responsive sizes.
-    const srcSet = `${src} 1x, ${src.replace(/(\.[^.]+)$/, '@2x$1')} 2x`
-    const webpSrcSet = srcSet.replace(/(\.[^.]+)$/, '.webp')
     return (
-      <picture>
-        <source type="image/webp" srcSet={webpSrcSet} />
-        <img
-          src={src}
-          srcSet={srcSet}
-          alt={alt}
-          width={width}
-          height={height}
-          loading={eager ? undefined : 'lazy'}
-          fetchpriority={eager ? 'high' : undefined}
-          decoding="async"
-        />
-      </picture>
+      <img
+        src={src}
+        srcSet={srcSet}
+        sizes={srcSet ? sizes : undefined}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={eager ? undefined : 'lazy'}
+        fetchpriority={eager ? 'high' : undefined}
+        decoding="async"
+      />
     )
   }
   return (

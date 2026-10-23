@@ -16,9 +16,15 @@ npm run meta       # lists every page's title and meta description, flags duplic
 npm run verify     # build + check + links in one go. Run this before every deploy
 ```
 
-Speed notes: phones and tablets load no animation library at all (GSAP and Lenis load on desktop only), the
-intro animation plays once per visit on desktop, and `public/_headers` makes images and scripts cache for repeat
-visits.
+Speed notes (what keeps the site fast, and what to run when you change things):
+- **Fonts** are served from this site (`public/fonts`), not Google. Adding new Urdu words? Run `node scripts/fetch-fonts.mjs`.
+- **Photos** have small copies (480/800/1200 px) so phones download a small file. After adding or replacing a photo in
+  `public/images`, run `node scripts/make-responsive-images.mjs`.
+- **The CSS** is placed inside each page at build time, so the first paint does not wait for a separate file.
+- **The Google Ads / Analytics tag** (~150 KB) loads on the visitor's first scroll or tap, not with the page. Call and
+  WhatsApp clicks are still counted (`src/lib/tracking.js`).
+- **Animation code** (GSAP) is a separate file, fetched after the page appears. The intro plays on every device.
+- `npm run links` also checks every photo listed in a `srcset`, so a missing image file is caught before deploy.
 
 ## Change a price
 Open `src/data/services.js`.

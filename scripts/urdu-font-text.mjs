@@ -1,7 +1,5 @@
-// The Urdu web font (Noto Nastaliq Urdu) is huge (~150 KB), so index.html asks Google Fonts for ONLY the
-// letters the site actually uses. If you add new Urdu words, run this and paste the output over the
-// `&text=...` part of the Urdu <link> in index.html:
-//   node scripts/urdu-font-text.mjs
+// Prints the Urdu letters the site uses. To rebuild the self-hosted Urdu font file after adding Urdu text, run:
+//   node scripts/fetch-fonts.mjs
 import fs from 'node:fs'
 import path from 'node:path'
 

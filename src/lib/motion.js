@@ -229,10 +229,10 @@ export function initHomeMotion() {
   // 2. The scroll scenes are set up as soon as the browser is idle (the intro keeps scrolling locked for ~3s,
   //    and below-the-fold content is hidden by CSS until then, with a 4s failsafe).
   const setupScenes = () => {
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'))
     ctx.add(() => {
       const mm = gsap.matchMedia()
       mm.add('(min-width: 961px) and (min-height: 620px)', () => {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.remove('reveal'))
         premiumScene()
         instantScene()
         luxuryScene()
@@ -243,11 +243,13 @@ export function initHomeMotion() {
         faqScene()
       })
       mm.add('(max-width: 960px), (max-height: 619px)', () => {
+        // these four are driven by scroll position (scrubbed), so they must not also carry the fade-in class
+        document.querySelectorAll('.split-img, .instant-img, .instant-text, .luxury-stage').forEach((el) => el.classList.remove('reveal'))
         mobileScenes()
-        reveal(['.ticker', '.split-text', '.luxury-head',
-          '.section-head', '.cat-card', '.car-tile', '.f-card', '.stats', '.pkg-mini', '.booking-inner', '.b', '.step'])
         document.querySelectorAll('.lux-stats [data-count]').forEach((el) => countUp(el, null, { trigger: el, start: 'top 90%' }))
         faqScene()
+        // everything else fades up through one IntersectionObserver (no per-element ScrollTrigger)
+        return revealWithObserver()
       })
     })
     ScrollTrigger.refresh()

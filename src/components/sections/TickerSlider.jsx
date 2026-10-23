@@ -37,7 +37,7 @@ export default function TickerSlider({ items, label = 'Why Thai Spa', interval =
 
   return (
     <div
-      className="ticker"
+      className="ticker reveal"
       role="group"
       aria-roledescription="carousel"
       aria-label={label}

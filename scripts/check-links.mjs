@@ -25,6 +25,17 @@ for (const f of htmlFiles) {
   const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))
   const bad = (m) => problems.push(`${pageUrl}: ${m}`)
 
+  // every image listed in srcset / imagesrcset must exist too (a missing "@2x" file once broke photos on phones)
+  for (const m of html.matchAll(/\s(?:image)?srcset="([^"]*)"/gi)) {
+    for (const cand of m[1].split(',')) {
+      const url = cand.trim().split(/\s+/)[0]
+      if (!url) continue
+      checked++
+      const local = url.startsWith('/') ? url : url.startsWith('https://www.thaispa.pk') ? url.replace('https://www.thaispa.pk', '') : null
+      if (local && !exists(local)) bad(`broken srcset image: ${url}`)
+    }
+  }
+
   for (const m of html.matchAll(/<(a|img|script|link)\b[^>]*?\s(href|src)="([^"]*)"/g)) {
     let url = m[3].replace(/&amp;/g, '&')
     if (!url || /^(tel:|mailto:|data:|javascript:)/.test(url)) continue

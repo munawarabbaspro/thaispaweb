@@ -16,7 +16,7 @@ import { problems } from '../data/problems'
 import {
   services, fullBodyServices, targetedServices, getService, fromPrice, formatPrice, minPrice, shortSessions, fullBodyRates,
 } from '../data/services'
-import { img } from '../data/images'
+import { img, imgSrcSet } from '../data/images'
 import { reducedMotion, revealWithObserver, countUpOnView } from '../lib/chrome'
 
 const TILE_IMG = { 'back-neck-massage': 'tile-back-neck', 'foot-massage': 'tile-foot', 'head-shoulder-massage': 'tile-head-shoulder' }
@@ -60,14 +60,14 @@ export default function Home() {
         path="/"
       />
       <Head>
-        <link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/hero.webp" imagesrcset={imgSrcSet('hero', 1600)} imagesizes="100vw" fetchpriority="high" />
       </Head>
       <FaqSchema faqs={faqs} />
 
       {/* HERO */}
       <section className="hero" id="intro">
         <div className="clouds" aria-hidden="true"><i className="c c1" /><i className="c c3" /><i className="c c4" /></div>
-        <div className="hero-car"><Media eager seed={1} {...img('hero')} /></div>
+        <div className="hero-car"><Media eager seed={1} sizes="100vw" {...img('hero')} /></div>
         <div className="hero-text">
           <p className="eyebrow">Thai Spa · Civic Center, Bahria Town Phase 4</p>
           <h1 className="display">
@@ -175,7 +175,7 @@ export default function Home() {
           {problems.map((p, i) => {
             const s = getService(p.slug)
             return (
-              <Link key={p.slug} className="cat-card" data-tilt to={`/services/${p.slug}`}>
+              <Link key={p.slug} className="cat-card reveal" data-tilt to={`/services/${p.slug}`}>
                 <Media dark seed={i + 5} {...img(`problem-${['shoulders', 'back', 'sleep', 'legs'][i]}`)} />
                 <span className="cat-info"><strong>{p.title}</strong><small>{s.name} · from {formatPrice(fromPrice(s))}</small></span>
                 <span className="cat-go" aria-hidden="true"><ArrowRight className="ico" /></span>
@@ -186,7 +186,7 @@ export default function Home() {
         <h2 className="sub-head">Short sessions, an easy first visit</h2>
         <div className="fleet-grid-x">
           {shortSessions.map(({ service: s, price }, i) => (
-            <article key={s.slug} className="car-tile" data-tilt>
+            <article key={s.slug} className="car-tile reveal" data-tilt>
               <Link className="tile-media" to={`/services/${s.slug}`} tabIndex={-1} aria-hidden="true"><Media seed={i + 9} {...img(TILE_IMG[s.slug])} /></Link>
               <div className="tile-body">
                 <p className="tile-cat">Targeted treatment</p>
@@ -216,34 +216,34 @@ export default function Home() {
           <h2 className="display center"><span className="light">Built for</span> <span className="bold">peace of mind</span></h2>
         </div>
         <div className="bento">
-          <article className="b b-1" data-tilt>
+          <article className="b b-1 reveal" data-tilt>
             <ShieldCheck className="ico" aria-hidden="true" />
             <h3>Every session starts with questions</h3>
             <p>Where it hurts, and what you do all day, before anyone touches anything.</p>
             <span className="big">2 min</span>
             <p>of questions before every session.</p>
           </article>
-          <article className="b b-2" data-tilt>
+          <article className="b b-2 reveal" data-tilt>
             <Tag className="ico" aria-hidden="true" />
             <h3>Prices are on the website</h3>
             <p>All of them. You know what you're paying before you walk in.</p>
           </article>
-          <article className="b b-3" data-tilt>
+          <article className="b b-3 reveal" data-tilt>
             <HomeIcon className="ico" aria-hidden="true" />
             <h3>Private rooms</h3>
             <p>Fresh linen for every client. Not a shared hall with curtains between beds.</p>
           </article>
-          <article className="b b-4" data-tilt>
+          <article className="b b-4 reveal" data-tilt>
             <Clock className="ico" aria-hidden="true" />
             <h3>Thirty minutes is a real option</h3>
             <p>You don't have to book an hour to find out whether this helps.</p>
           </article>
-          <article className="b b-5" data-tilt>
+          <article className="b b-5 reveal" data-tilt>
             <Sparkles className="ico" aria-hidden="true" />
             <h3>Trained therapists</h3>
             <p>Thai and deep-tissue technique, with premium quality oils.</p>
           </article>
-          <article className="b b-6" data-tilt>
+          <article className="b b-6 reveal" data-tilt>
             <div>
               <h3>Not sure which treatment to choose?</h3>
               <p>Tell us where it hurts and we'll pick the technique.</p>
@@ -260,9 +260,9 @@ export default function Home() {
           <h2 className="display center"><span className="light">How it</span> <span className="bold">works</span></h2>
         </div>
         <div className="steps">
-          <article className="step"><h3>Tell us where it hurts</h3><p>A couple of minutes of questions: where it aches, and what you do all day.</p></article>
-          <article className="step"><h3>We pick the technique</h3><p>Thai, deep tissue, Swedish or a shorter targeted session, matched to what you told us.</p></article>
-          <article className="step"><h3>You leave with something to do at home</h3><p>One simple aftercare tip you can use that same evening.</p></article>
+          <article className="step reveal"><h3>Tell us where it hurts</h3><p>A couple of minutes of questions: where it aches, and what you do all day.</p></article>
+          <article className="step reveal"><h3>We pick the technique</h3><p>Thai, deep tissue, Swedish or a shorter targeted session, matched to what you told us.</p></article>
+          <article className="step reveal"><h3>You leave with something to do at home</h3><p>One simple aftercare tip you can use that same evening.</p></article>
         </div>
       </section>
 
@@ -307,12 +307,12 @@ export default function Home() {
           <h2 className="display center"><span className="light">Honest</span> <span className="bold">prices</span></h2>
         </div>
         <div className="pkg-mini-grid">
-          <Link className="pkg-mini" data-tilt to="/prices">
+          <Link className="pkg-mini reveal" data-tilt to="/prices">
             <Tag className="ico" aria-hidden="true" /><strong>Full body, 60 min</strong>
             <small>Thai, deep tissue, Swedish and more</small><span>{formatPrice(rate60)}</span>
           </Link>
           {shortSessions.map(({ service: s, price }) => (
-            <Link key={s.slug} className="pkg-mini" data-tilt to={`/services/${s.slug}`}>
+            <Link key={s.slug} className="pkg-mini reveal" data-tilt to={`/services/${s.slug}`}>
               <Clock className="ico" aria-hidden="true" /><strong>{s.name}, 30 min</strong>
               <small>{s.bestFor.split(',')[0]}</small><span>{formatPrice(price)}</span>
             </Link>
