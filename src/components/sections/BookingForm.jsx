@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 import { business, waLink } from '../../data/business'
+import { trackContact } from '../../lib/tracking'
 import { services, getService, formatPrice } from '../../data/services'
 
 // Validates, then opens a pre-filled WhatsApp message. No backend.
@@ -26,6 +27,7 @@ export default function BookingForm({ id, className, defaultSlug = 'full-body-ma
       `Assalam o Alaikum, I'd like to book a ${service.name} (${minutes} minutes, ${formatPrice(rate.price)}) ` +
       `at ${business.name} on ${date} at ${time}.`
     setMsg({ text: 'Opening WhatsApp with your booking request…', err: false })
+    trackContact('whatsapp')
     window.open(waLink(text), '_blank', 'noopener')
   }
 

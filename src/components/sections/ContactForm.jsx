@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 import { business, waLink } from '../../data/business'
+import { trackContact } from '../../lib/tracking'
 import { services, getService, formatPrice } from '../../data/services'
 
 const initial = { name: '', phone: '', slug: 'full-body-massage', date: '', time: '', notes: '' }
@@ -49,6 +50,7 @@ export default function ContactForm() {
       }
     }
     setSent(true)
+    trackContact('whatsapp')
     window.open(waLink(text), '_blank', 'noopener')
   }
 

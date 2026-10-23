@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer'
 import MobileActionBar from './components/layout/MobileActionBar'
 import LocalBusinessSchema from './components/seo/LocalBusinessSchema'
 import { bindChrome, bindTilt, reducedMotion } from './lib/chrome'
+import { initTracking } from './lib/tracking'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -24,22 +25,8 @@ export default function App() {
     }
   }, [])
 
-  // GA4: loaded only when VITE_GA_ID is set, and only after first paint.
-  useEffect(() => {
-    const id = import.meta.env.VITE_GA_ID
-    if (!id || window.gtag) return
-    const load = () => {
-      const s = document.createElement('script')
-      s.async = true
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id
-      document.head.appendChild(s)
-      window.dataLayer = window.dataLayer || []
-      window.gtag = function () { window.dataLayer.push(arguments) }
-      window.gtag('js', new Date())
-      window.gtag('config', id)
-    }
-    ;('requestIdleCallback' in window ? window.requestIdleCallback : (f) => setTimeout(f, 2000))(load)
-  }, [])
+  // Google Ads conversion tracking (+ GA4 if VITE_GA_ID is set): call and WhatsApp clicks.
+  useEffect(() => initTracking(), [])
 
   useEffect(() => {
     window.scrollTo(0, 0)
