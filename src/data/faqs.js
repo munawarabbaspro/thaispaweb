@@ -17,6 +17,10 @@ export const faqs = [
     a: `${business.address.street}, ${business.address.landmark}, ${business.address.city}. We welcome clients from across Bahria Town, DHA, Rawalpindi and Islamabad. Call ${business.phone} if you need directions.`,
   },
   {
+    q: 'Are you really open 24 hours?',
+    a: 'Yes. Our team works in two 12-hour shifts, so someone is always at Civic Center, day and night, seven days a week. Message us on WhatsApp to book a slot.',
+  },
+  {
     q: 'What are your opening hours?',
     a: business.hours.every(isAllDay) ? 'We are open 24 hours a day, seven days a week.' : `We are open seven days: ${hours}.`,
   },

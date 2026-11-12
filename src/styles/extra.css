@@ -191,3 +191,22 @@ a.sr-only:focus { position: fixed; left: 16px; top: 16px; z-index: 200; width: a
     contain-intrinsic-size: auto 900px;
   }
 }
+
+/* ---- Live badge: "Live · Open 24 hours" ---- */
+.live-badge {
+  display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+  padding: 7px 8px 7px 14px; border-radius: 999px; text-decoration: none; color: var(--ink);
+  background: rgba(255, 255, 255, .72); border: 1px solid rgba(10, 121, 173, .22);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow: 0 10px 28px -14px rgba(11, 30, 51, .35); font-size: 13px; line-height: 1; margin-bottom: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.live-badge:hover { transform: translateY(-1px); box-shadow: 0 14px 30px -12px rgba(11, 30, 51, .45); }
+.live-badge:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+.live-dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: #e5484d; flex: none; animation: live-pulse 1.6s ease-out infinite; }
+.live-tag { font-family: var(--font-display, Sora, sans-serif); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color: #c4262c; }
+.live-text { font-weight: 600; white-space: nowrap; }
+.live-go { margin-left: 4px; padding: 8px 12px; border-radius: 999px; background: var(--grad); color: #fff; font-weight: 700; font-size: 12px; white-space: nowrap; }
+@keyframes live-pulse { 0% { box-shadow: 0 0 0 0 rgba(229, 72, 77, .55); } 70% { box-shadow: 0 0 0 9px rgba(229, 72, 77, 0); } 100% { box-shadow: 0 0 0 0 rgba(229, 72, 77, 0); } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } .live-badge { transition: none; } }
+@media (max-width: 420px) { .live-text { font-size: 12px; } .live-go { padding: 7px 10px; } }

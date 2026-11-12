@@ -10,6 +10,7 @@ import ContactForm from '../components/sections/ContactForm'
 import MapEmbed, { mapLinks } from '../components/sections/MapEmbed'
 import { business, formatHours, hoursLabel, waLink, bookingMessage } from '../data/business'
 import { faqs } from '../data/faqs'
+import LiveBadge from '../components/ui/LiveBadge'
 
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -52,6 +53,7 @@ export default function Contact() {
             </div>
 
             <h3 className="section-title" style={{ fontSize: 22, margin: '34px 0 14px' }}>Opening hours</h3>
+            <LiveBadge />
             <table className="rate-table hours-table">
               <tbody>
                 {business.hours.flatMap((h) =>
@@ -64,6 +66,8 @@ export default function Contact() {
                 )}
               </tbody>
             </table>
+
+            <p className="note">Our team works in two 12-hour shifts, so someone is always here.</p>
 
             <MapEmbed />
             {/* TODO owner: set business.geo and business.social.googleMaps for an exact pin. */}

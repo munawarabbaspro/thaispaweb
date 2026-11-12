@@ -12,6 +12,7 @@ import OfferCards from '../components/sections/OfferCards'
 import BookingForm from '../components/sections/BookingForm'
 import { business, waLink, bookingMessage } from '../data/business'
 import { faqs } from '../data/faqs'
+import LiveBadge from '../components/ui/LiveBadge'
 import { problems } from '../data/problems'
 import {
   services, fullBodyServices, targetedServices, getService, fromPrice, formatPrice, minPrice, shortSessions, fullBodyRates,
@@ -69,6 +70,7 @@ export default function Home() {
         <div className="clouds" aria-hidden="true"><i className="c c1" /><i className="c c3" /><i className="c c4" /></div>
         <div className="hero-car"><Media eager seed={1} sizes="100vw" {...img('hero')} /></div>
         <div className="hero-text">
+          <LiveBadge />
           <p className="eyebrow">Thai Spa · Civic Center, Bahria Town Phase 4</p>
           <h1 className="display">
             <span className="line"><span className="light">Massage in</span></span>{' '}
