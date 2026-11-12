@@ -57,7 +57,7 @@ export default function Prices() {
           <>
             How much is a massage in Islamabad? This is the whole massage rate list for Thai Spa. The full body massage Islamabad price
             list is one rate card for all full-body treatments, and a 30 minute massage price in Islamabad starts at {formatPrice(minPrice)}.
-            Thai massage, deep tissue and the rest all follow the same list. Prices last updated {business.pricesUpdated}, in Pakistani rupees.
+            Looking for the Thai massage Islamabad price list? Thai, deep tissue and the rest all follow the same list. The spa in Bahria Town Phase 4 price of each treatment, and our massage rate list in Islamabad, are in the tables below. Prices last updated {business.pricesUpdated}, in Pakistani rupees.
           </>
         }
       />

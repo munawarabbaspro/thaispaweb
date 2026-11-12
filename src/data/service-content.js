@@ -202,25 +202,25 @@ export const content = {
 // and reflexology (not something the menu offers).
 export const leads = {
   'thai-massage':
-    'Looking for Thai massage in Islamabad? Thai Spa offers traditional Thai massage at Civic Center, Bahria Town Phase 4, and the Thai massage Islamabad price list is published on our [prices page](/prices).',
+    'Looking for Thai massage in Islamabad? Thai Spa offers traditional Thai massage at Civic Center, Bahria Town Phase 4, and the Thai massage Islamabad price list is published on our [prices page](/prices). Traditional Thai massage in Islamabad is done on a mat, and Thai massage in Bahria Town at Thai Spa is easy to reach from every phase.',
   'deep-tissue-massage':
-    'Our deep tissue massage in Islamabad is at Civic Center, Bahria Town Phase 4. If you have been searching for deep tissue massage near me, prices included, ours are on the [prices page](/prices). Comparing styles? Our guide to [deep tissue vs Swedish massage](/blog/which-massage-should-i-choose) explains the difference.',
+    'Our deep tissue massage in Islamabad is at Civic Center, Bahria Town Phase 4. If you have been searching for deep tissue massage near me, prices included, ours are on the [prices page](/prices). Comparing styles? Our guide to [deep tissue vs Swedish massage](/blog/which-massage-should-i-choose) explains the difference. For deep tissue massage for knots in the shoulders and back, ask for firm pressure; deep tissue massage in Bahria Town is booked here every day of the week.',
   'swedish-massage':
-    'Swedish massage in Islamabad is the classic relaxing massage, and Thai Spa in Bahria Town is a gentle place to book your first time massage in Islamabad. Pressure stays light to medium unless you ask for more.',
+    'Swedish massage in Islamabad is the classic relaxing massage, and Thai Spa in Bahria Town is a gentle place to book your first time massage in Islamabad. Pressure stays light to medium unless you ask for more. A relaxing massage in Islamabad does not have to mean a long trip: Swedish massage in Bahria Town is at Civic Center, Phase 4.',
   'aromatherapy-massage':
-    'Aromatherapy massage in Islamabad pairs a slow oil massage with essential oils such as lavender. People book this aroma massage in Bahria Town when they want a quiet hour and a way to unwind from stress.',
+    'Aromatherapy massage in Islamabad pairs a slow oil massage with essential oils such as lavender. People book this aroma massage in Bahria Town when they want a quiet hour and a way to unwind from stress. It is a gentle choice for massage for stress in Islamabad, and an essential oil massage in Islamabad that you can ask to be scent-free if you prefer.',
   'hot-stone-massage':
-    'Hot stone massage in Islamabad uses warm basalt stones to soften stiff muscles. At Thai Spa in Bahria Town the hot stone massage price is on our website, so you know it before you book.',
+    'Hot stone massage in Islamabad uses warm basalt stones to soften stiff muscles. At Thai Spa in Bahria Town the hot stone massage price is on our website, so you know it before you book. Hot stone massage in Bahria Town is a warm-stone massage that people often book in colder weather, and the hot stone massage benefits are simple: warmth that helps tight muscles let go.',
   'sports-massage':
-    'Sports massage in Islamabad is for people who train. Thai Spa offers post workout massage in Bahria Town Phase 4 for heavy legs and tight hamstrings, whether you lift, run or play cricket.',
+    'Sports massage in Islamabad is for people who train. Thai Spa offers post workout massage in Bahria Town Phase 4 for heavy legs and tight hamstrings, whether you lift, run or play cricket. A post workout massage in Islamabad is also useful for massage for tight hamstrings, and sports massage in Bahria Town suits runners, lifters and cricketers alike.',
   'full-body-massage':
-    'Full body massage in Islamabad at Thai Spa is our standard oil massage. The full body massage Islamabad price list is on the [prices page](/prices), and the same rates apply to all of our full-body massages in Bahria Town.',
+    'Full body massage in Islamabad at Thai Spa is our standard oil massage. The full body massage Islamabad price list is on the [prices page](/prices), and the same rates apply to all of our full-body massages in Bahria Town. If you want a full body massage in Bahria Town without choosing a technique, this is the one to book.',
   'mens-full-body-massage':
-    "Full body massage for men in Islamabad at Thai Spa, Bahria Town Phase 4, is given by a male therapist in a private room. It uses the same rates as every full-body massage, listed on the [prices page](/prices).",
+    "Full body massage for men in Islamabad at Thai Spa, Bahria Town Phase 4, is given by a male therapist in a private room. It uses the same rates as every full-body massage, listed on the [prices page](/prices). Men who want a male therapist massage in Islamabad, or a relaxing massage for men in Bahria Town, can book this directly.",
   'head-shoulder-massage':
-    'Head and shoulder massage in Bahria Town at Thai Spa covers the scalp, neck and shoulders. A thirty-minute head massage in Islamabad is a short, easy way to start, and neck and shoulder work is included.',
+    'Head and shoulder massage in Bahria Town at Thai Spa covers the scalp, neck and shoulders. A thirty-minute head massage in Islamabad is a short, easy way to start, and neck and shoulder work is included. Neck and shoulder massage in Bahria Town is included in every session, and many people book it as a massage for headache in Islamabad when tension sits in the neck.',
   'back-neck-massage':
-    'Back and neck massage in Bahria Town at Thai Spa focuses on the muscles along the spine. A thirty-minute back massage in Islamabad is short enough to try on a first visit, and it also suits a stiff neck after a long drive.',
+    'Back and neck massage in Bahria Town at Thai Spa focuses on the muscles along the spine. A thirty-minute back massage in Islamabad is short enough to try on a first visit, and it also suits a stiff neck after a long drive. Massage for back pain in Islamabad should start gently, and the same applies to massage for stiff neck after a long drive.',
   'foot-massage':
-    'Foot massage in Bahria Town at Thai Spa works on the soles, ankles and calves. A 30 minute foot massage in Islamabad suits tired legs after a long day on your feet.',
+    'Foot massage in Bahria Town at Thai Spa works on the soles, ankles and calves. A 30 minute foot massage in Islamabad suits tired legs after a long day on your feet. Foot reflexology in Islamabad is a pressure-point style; ours is a foot massage, and a tired legs massage in Islamabad is a fair description of what most people book it for.',
 }
