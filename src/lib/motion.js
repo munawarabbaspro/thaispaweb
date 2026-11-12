@@ -85,12 +85,12 @@ function pinned(trigger, length = '+=140%') {
 function heroIntro() {
   return gsap.timeline({ paused: true })
     .from('#nav-menu li, .nav-toggle', { y: -20, autoAlpha: 0, stagger: 0.06, duration: 0.6, ease: 'power3.out' }, 0)
-    .from('.hero .clouds', { autoAlpha: 0, duration: 1.5 }, 0)
+    .from('.hero .clouds', { autoAlpha: 0, duration: 1 }, 0)
     .from('.hero .eyebrow', { y: 20, autoAlpha: 0, duration: 0.6 }, 0.1)
-    .from('.hero .line > span', { yPercent: 115, duration: 1.1, stagger: 0.14, ease: 'power4.out' }, 0.15)
-    .from('.hero .tagline, .hero .urdu-line, .hero .actions', { y: 24, autoAlpha: 0, stagger: 0.12, duration: 0.8, ease: 'power3.out' }, 0.5)
-    .from('.hero-car', { scale: 1.18, autoAlpha: 0, duration: 2.2, ease: 'power3.out' }, 0.2)
-    .from('.quick-book', { y: 50, autoAlpha: 0, duration: 0.9, ease: 'power3.out' }, 0.8)
+    .from('.hero .line > span', { yPercent: 115, duration: 0.8, stagger: 0.1, ease: 'power4.out' }, 0.1)
+    .from('.hero .tagline, .hero .urdu-line, .hero .actions', { y: 24, autoAlpha: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out' }, 0.35)
+    .from('.hero-car', { scale: 1.12, autoAlpha: 0, duration: 1.2, ease: 'power3.out' }, 0)
+    .from('.quick-book', { y: 40, autoAlpha: 0, duration: 0.7, ease: 'power3.out' }, 0.5)
 }
 
 function heroScroll() {
@@ -187,16 +187,16 @@ function playIntro(hero, onDone) {
     text.innerHTML = word.slice(0, Math.min(n, split)) + (n > split ? `<span>${word.slice(split, n)}</span>` : '')
   }
 
-  gsap.timeline({ delay: 0.3 })
-    .to(o, { n: word.length, duration: 1.1, ease: 'none', onUpdate: render })
-    .to(caret, { autoAlpha: 0, duration: 0.2 }, '+=.35')
+  gsap.timeline({ delay: 0.15 })
+    .to(o, { n: word.length, duration: 0.8, ease: 'none', onUpdate: render })
+    .to(caret, { autoAlpha: 0, duration: 0.15 }, '+=.15')
     .add(() => {
       const a = text.getBoundingClientRect()
       const b = logo.getBoundingClientRect()
       gsap.timeline({ onComplete: finish })
-        .to(text, { x: b.left - a.left, y: b.top - a.top, scale: b.width / a.width, duration: 1, ease: 'power3.inOut' })
-        .to(loader, { backgroundColor: 'rgba(246,250,253,0)', duration: 0.8, ease: 'power2.inOut' }, 0.2)
-        .add(() => hero.play(), 0.45)
+        .to(text, { x: b.left - a.left, y: b.top - a.top, scale: b.width / a.width, duration: 0.7, ease: 'power3.inOut' })
+        .to(loader, { backgroundColor: 'rgba(246,250,253,0)', duration: 0.6, ease: 'power2.inOut' }, 0.1)
+        .add(() => hero.play(), 0.25)
     })
 }
 
