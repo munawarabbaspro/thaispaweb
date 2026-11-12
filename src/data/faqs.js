@@ -29,6 +29,10 @@ export const faqs = [
     a: `Yes. Thai Spa is at ${business.address.street}, ${business.address.landmark}. We offer Thai, deep tissue, Swedish, aromatherapy, hot stone, sports and full body massage in private rooms, plus shorter back and neck, head and shoulder, and foot massage.`,
   },
   {
+    q: 'Is there a spa in Rawalpindi near Bahria Town?',
+    a: `Yes. Thai Spa is a spa and massage centre at ${business.address.street}, ${business.address.landmark}, in Bahria Town Phase 4, Rawalpindi. It is a short drive from DHA, the other Bahria phases and Islamabad, and every price is published on the prices page.`,
+  },
+  {
     q: 'What is the price of a 30 minute massage in Islamabad?',
     a: `At Thai Spa a 30-minute full-body massage is ${formatPrice(rate30)}, and a 30-minute back and neck or foot massage is ${formatPrice(minPrice)}. Every price is on the prices page.`,
   },

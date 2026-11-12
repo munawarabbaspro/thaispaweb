@@ -56,8 +56,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Massage in Bahria Town Phase 4, Islamabad | Thai Spa"
-        description="Thai Spa, massage centre at Civic Center, Bahria Town Phase 4. Thai, deep tissue, Swedish, hot stone. Open 24 hours, prices published. Call or WhatsApp."
+        title="Massage in Bahria Town Phase 4 | Spa, Rawalpindi | Thai Spa"
+        description="Thai Spa: spa and massage centre at Civic Center, Bahria Town Phase 4, Rawalpindi. Thai, deep tissue, Swedish, hot stone. Open 24 hours, prices published."
         path="/"
       />
       <Head>
@@ -77,7 +77,7 @@ export default function Home() {
             <span className="line"><span className="bold">Bahria Town Phase 4</span></span>
           </h1>
           <p className="tagline">
-            Thai Spa is a massage centre in Civic Center, Bahria Town Phase 4, Islamabad. Relief that lasts longer than the session: Thai, deep tissue, Swedish and hot stone, from thirty minutes at {formatPrice(minPrice)}, every price published.
+            Thai Spa is a spa and massage centre in Civic Center, Bahria Town Phase 4, Rawalpindi, next to Islamabad. Relief that lasts longer than the session: Thai, deep tissue, Swedish and hot stone, from thirty minutes at {formatPrice(minPrice)}, every price published.
           </p>
           <p className="urdu-line" dir="rtl" lang="ur">سکون جو سیشن کے بعد بھی ساتھ رہے</p>
           <div className="actions">
@@ -113,7 +113,7 @@ export default function Home() {
             <h2 className="display"><span className="light">Treatments chosen by</span> <span className="bold">what's wrong</span></h2>
             <div className="row">
               <p className="caps">
-                Looking for a massage center in Bahria Town, or a massage centre at Bahria Town Civic Center? Thai Spa Bahria Town Phase 4 is next to Anarkali Hotel. Want a spa centre near you with the prices listed? Our full-body massages
+                Looking for a massage center in Bahria Town, or a massage centre at Bahria Town Civic Center? Thai Spa Bahria Town Phase 4 is next to Anarkali Hotel. Looking for a spa in Rawalpindi, or a massage center in Rawalpindi that publishes its prices? Thai Spa is a spa in Bahria Town Phase 4, Rawalpindi, a short drive from DHA and Islamabad. Searching for a spa near me in Bahria Town? Civic Center is the place. Want a spa centre near you with the prices listed? Our full-body massages
                 share one rate card, plus three targeted treatments from {formatPrice(minPrice)}. We are open 24 hours a day, so if you
                 need a massage near you open now, see today's hours on the <Link to="/contact">contact page</Link>.
               </p>

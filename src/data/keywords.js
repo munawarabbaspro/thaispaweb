@@ -13,6 +13,7 @@ export const keywordMap = {
       'best spa in bahria town phase 4', 'thai spa bahria town phase 4',
       'best massage centre rawalpindi', 'massage centre bahria town civic center',
       'spa centre near me with price', 'massage near me open now',
+      'spa in rawalpindi', 'massage center rawalpindi', 'spa near me', 'spa in bahria town phase 4 rawalpindi',
     ],
   },
   '/prices': {

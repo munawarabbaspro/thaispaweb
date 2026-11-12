@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <div className="page">
       <Seo
-        title="Massage Services in Bahria Town, Islamabad | Thai Spa"
+        title="Spa & Massage Services in Bahria Town, Rawalpindi | Thai Spa"
         description="Thai, deep tissue, Swedish, aromatherapy, hot stone and sports massage in Civic Center, Bahria Town Phase 4. Plus back, neck, head and foot treatments from Rs 2,500."
         path="/services"
       />
