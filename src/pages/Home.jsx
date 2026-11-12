@@ -57,7 +57,7 @@ export default function Home() {
     <>
       <Seo
         title="Massage in Bahria Town Phase 4, Islamabad | Thai Spa"
-        description="Thai Spa is a massage centre in Civic Center, Bahria Town Phase 4. Thai, deep tissue, Swedish and hot stone massage from 30 minutes, prices published. Call or WhatsApp."
+        description="Thai Spa, massage centre at Civic Center, Bahria Town Phase 4. Thai, deep tissue, Swedish, hot stone. Open 24 hours, prices published. Call or WhatsApp."
         path="/"
       />
       <Head>
