@@ -61,14 +61,14 @@ export default function Home() {
         path="/"
       />
       <Head>
-        <link rel="preload" as="image" href="/images/hero.webp" imagesrcset={imgSrcSet('hero', 1600)} imagesizes="100vw" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/hero.webp" imagesrcset={imgSrcSet('hero', 1600)} imagesizes="(max-width: 767px) 280vw, 100vw" fetchpriority="high" />
       </Head>
       <FaqSchema faqs={faqs} />
 
       {/* HERO */}
       <section className="hero" id="intro">
         <div className="clouds" aria-hidden="true"><i className="c c1" /><i className="c c3" /><i className="c c4" /></div>
-        <div className="hero-car"><Media eager seed={1} sizes="100vw" {...img('hero')} /></div>
+        <div className="hero-car"><Media eager seed={1} sizes="(max-width: 767px) 280vw, 100vw" {...img('hero')} /></div>
         <div className="hero-text">
           <LiveBadge />
           <p className="eyebrow">Thai Spa · Civic Center, Bahria Town Phase 4</p>

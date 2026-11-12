@@ -210,3 +210,13 @@ a.sr-only:focus { position: fixed; left: 16px; top: 16px; z-index: 200; width: a
 @keyframes live-pulse { 0% { box-shadow: 0 0 0 0 rgba(229, 72, 77, .55); } 70% { box-shadow: 0 0 0 9px rgba(229, 72, 77, 0); } 100% { box-shadow: 0 0 0 0 rgba(229, 72, 77, 0); } }
 @media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } .live-badge { transition: none; } }
 @media (max-width: 420px) { .live-text { font-size: 12px; } .live-go { padding: 7px 10px; } }
+
+/* ---- Phones: sharp, uncropped photos ----
+   The hero photo used to stretch over the whole tall hero (text + form), blowing a 1600x1000 file up past 4x.
+   Now it covers only the top of the hero, focused on the person, and the 1600px file is chosen (see sizes in Home.jsx). */
+@media (max-width: 767px) {
+  .hero-car { inset: 0 0 auto 0; height: min(78svh, 640px); }
+  .hero-car img { object-position: 66% 28%; }
+  .hero-car { -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent); mask-image: linear-gradient(180deg, #000 72%, transparent); }
+  .luxury-stage img { height: auto !important; max-height: none !important; width: calc(100% + var(--gutter)); aspect-ratio: 2 / 1; flex: none; }
+}
