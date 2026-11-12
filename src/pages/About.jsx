@@ -16,7 +16,7 @@ export default function About() {
     'Premium quality oils',
     'A relaxing, quiet atmosphere',
     'Parking at Civic Center',
-    'Open seven days a week',
+    'Open 24 hours, seven days a week',
   ]
   const steps = [
     ['Questions first', 'Every session starts with two minutes of questions: where it hurts, and what you do all day.'],

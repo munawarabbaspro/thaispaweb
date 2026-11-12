@@ -24,7 +24,7 @@ export default function Contact() {
     <div className="page">
       <Seo
         title="Massage Centre Civic Center Bahria Town | Contact & Book | Thai Spa"
-        description="Book a massage at Thai Spa, the massage centre in Civic Center, Bahria Town Phase 4, near Anarkali Hotel. Call, WhatsApp or send the form. Open seven days."
+        description="Book a massage at Thai Spa, the massage centre in Civic Center, Bahria Town Phase 4, near Anarkali Hotel. Call, WhatsApp or send the form. Open 24 hours."
         path="/contact"
       />
       <BreadcrumbSchema items={[{ name: 'Contact', path: '/contact' }]} />

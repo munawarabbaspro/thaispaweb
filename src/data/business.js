@@ -16,9 +16,9 @@ export const business = {
     country: 'PK',
   },
   geo: { lat: null, lng: null }, // OWNER: exact pin from Google Maps
+  // Open 24 hours, every day (owner confirmed). 00:00-23:59 is how schema.org expresses "all day".
   hours: [
-    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '20:00' },
-    { days: ['Saturday', 'Sunday'], opens: '10:00', closes: '21:00' },
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '00:00', closes: '23:59' },
   ],
   // Derived from services.js so it can never drift from the price list.
   priceRange: `PKR ${minPrice.toLocaleString('en-US')} – ${maxPrice.toLocaleString('en-US')}`,
@@ -51,7 +51,9 @@ const to12h = (t) => {
   return m ? `${h12}:${String(m).padStart(2, '0')} ${suffix}` : `${h12} ${suffix}`
 }
 
-export const formatHours = (block) => `${to12h(block.opens)} – ${to12h(block.closes)}`
+export const isAllDay = (block) => block.opens === '00:00' && block.closes === '23:59'
+
+export const formatHours = (block) => (isAllDay(block) ? 'Open 24 hours' : `${to12h(block.opens)} – ${to12h(block.closes)}`)
 
 export const hoursLabel = (block) =>
   block.days.length > 1 ? `${block.days[0].slice(0, 3)} – ${block.days.at(-1).slice(0, 3)}` : block.days[0]

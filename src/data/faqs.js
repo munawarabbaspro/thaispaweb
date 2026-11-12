@@ -1,4 +1,4 @@
-import { business, formatHours, hoursLabel } from './business'
+import { business, formatHours, hoursLabel, isAllDay } from './business'
 import { fullBodyRates, formatPrice, minPrice } from './services'
 
 // Only facts the owner has confirmed. Policies not yet confirmed (cancellation window,
@@ -18,7 +18,7 @@ export const faqs = [
   },
   {
     q: 'What are your opening hours?',
-    a: `We are open seven days: ${hours}.`,
+    a: business.hours.every(isAllDay) ? 'We are open 24 hours a day, seven days a week.' : `We are open seven days: ${hours}.`,
   },
   {
     q: 'Is there a massage centre in Bahria Town Phase 4?',

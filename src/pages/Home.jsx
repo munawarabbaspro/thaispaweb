@@ -101,7 +101,7 @@ export default function Home() {
           items={[
             'Private rooms, fresh linen for every client',
             'Civic Center · Bahria Town Phase 4 · Islamabad',
-            'Open seven days a week',
+            'Open 24 hours, seven days a week',
             'Thirty minutes is a real option',
           ]}
         />
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="row">
               <p className="caps">
                 Looking for a massage center in Bahria Town, or a massage centre at Bahria Town Civic Center? Thai Spa Bahria Town Phase 4 is next to Anarkali Hotel. Want a spa centre near you with the prices listed? Our full-body massages
-                share one rate card, plus three targeted treatments from {formatPrice(minPrice)}. We are open seven days, so if you
+                share one rate card, plus three targeted treatments from {formatPrice(minPrice)}. We are open 24 hours a day, so if you
                 need a massage near you open now, see today's hours on the <Link to="/contact">contact page</Link>.
               </p>
               <p className="urdu-line" dir="rtl" lang="ur">بحریہ ٹاؤن فیز 4 میں مساج سینٹر۔ ہر مساج کی قیمت ویب سائٹ پر درج ہے۔</p>
@@ -286,7 +286,7 @@ export default function Home() {
           <article className="f-card f-wheel reveal">
             <div className="f-top">
               <p><em>Book a session any day of the week.</em></p>
-              <span className="pill">7 days</span>
+              <span className="pill">24 hours</span>
             </div>
             <Link className="link-caps" to="/prices">See prices</Link>
             <Media seed={14} {...img('feature-week')} />
@@ -334,7 +334,7 @@ export default function Home() {
               {business.address.street}<br />{business.address.landmark}<br />{business.address.city}
             </address>
             <p className="page-intro left" style={{ marginTop: 18 }}>
-              Thai Spa is in Civic Center, near Anarkali Hotel, with parking at Civic Center. We are open seven days a week.
+              Thai Spa is in Civic Center, near Anarkali Hotel, with parking at Civic Center. We are open 24 hours, seven days a week.
             </p>
             <div className="actions-row">
               <Button href={business.phoneHref}>Call {business.phone}</Button>

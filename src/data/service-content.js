@@ -128,7 +128,7 @@ export const content = {
     related: ['swedish-massage', 'deep-tissue-massage', 'mens-full-body-massage'],
   },
   'mens-full-body-massage': {
-    metaLead: "Men's full body massage in Islamabad by a male therapist, Thai Spa, Civic Center, Bahria Town Phase 4. Private rooms, open 7 days.",
+    metaLead: "Men's full body massage in Islamabad by a male therapist, Thai Spa, Civic Center, Bahria Town Phase 4. Private rooms, open 24 hours.",
     // TODO: owner to confirm a male therapist is on every shift before this page is promoted in ads.
     intro: [
       "The Full Body Massage for Men is our standard oil massage for male clients, given by a male therapist. It covers the back, shoulders, arms, legs and feet with warm oil, flowing strokes and steady kneading, and you can ask for firmer or lighter pressure at any point.",
