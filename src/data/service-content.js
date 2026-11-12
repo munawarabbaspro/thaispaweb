@@ -128,11 +128,11 @@ export const content = {
     related: ['swedish-massage', 'deep-tissue-massage', 'mens-full-body-massage'],
   },
   'mens-full-body-massage': {
-    metaLead: "Men's full body massage in Islamabad by a male therapist, Thai Spa, Civic Center, Bahria Town Phase 4. Private rooms, open 24 hours.",
+    metaLead: "Male to male massage in Islamabad: men's full body massage by a male therapist at Thai Spa, Bahria Town Phase 4. Open 24 hours.",
     // TODO: owner to confirm a male therapist is on every shift before this page is promoted in ads.
     intro: [
       "The Full Body Massage for Men is our standard oil massage for male clients, given by a male therapist. It covers the back, shoulders, arms, legs and feet with warm oil, flowing strokes and steady kneading, and you can ask for firmer or lighter pressure at any point.",
-      "Many men simply feel more at ease with a male therapist, and that is a fair reason to book this one. It suits tight shoulders from desk work, sore legs after the gym or a cricket match, and a stiff back after long drives. You stay covered with a towel in a private room.",
+      "This is male to male massage: a male client with a male therapist, in a private room. Many men simply feel more at ease that way, and that is a fair reason to book this one. It suits tight shoulders from desk work, sore legs after the gym or a cricket match, and a stiff back after long drives. You stay covered with a towel in a private room.",
     ],
     note: 'This is a professional massage for relaxation and muscle relief, and nothing else. A towel covers you throughout, only the area being worked is uncovered, and we will leave out any area you ask us to.',
     best: ['Men who prefer a male therapist', 'Desk-job shoulders and neck', 'Gym or cricket soreness', 'A stiff back after long drives', 'Tired, heavy legs', 'A medium-pressure all-round session'],
@@ -216,7 +216,7 @@ export const leads = {
   'full-body-massage':
     'Full body massage in Islamabad at Thai Spa is our standard oil massage. The full body massage Islamabad price list is on the [prices page](/prices), and the same rates apply to all of our full-body massages in Bahria Town. If you want a full body massage in Bahria Town without choosing a technique, this is the one to book.',
   'mens-full-body-massage':
-    "Full body massage for men in Islamabad at Thai Spa, Bahria Town Phase 4, is given by a male therapist in a private room. It uses the same rates as every full-body massage, listed on the [prices page](/prices). Men who want a male therapist massage in Islamabad, or a relaxing massage for men in Bahria Town, can book this directly.",
+    "Full body massage for men in Islamabad at Thai Spa, Bahria Town Phase 4, is given by a male therapist in a private room. It uses the same rates as every full-body massage, listed on the [prices page](/prices). Men who want male to male massage in Islamabad, a male therapist massage in Islamabad, or a relaxing massage for men in Bahria Town, can book this directly.",
   'head-shoulder-massage':
     'Head and shoulder massage in Bahria Town at Thai Spa covers the scalp, neck and shoulders. A thirty-minute head massage in Islamabad is a short, easy way to start, and neck and shoulder work is included. Neck and shoulder massage in Bahria Town is included in every session, and many people book it as a massage for headache in Islamabad when tension sits in the neck.',
   'back-neck-massage':

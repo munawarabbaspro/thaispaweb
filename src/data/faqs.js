@@ -33,6 +33,10 @@ export const faqs = [
     a: `Yes. Thai Spa is a spa and massage centre at ${business.address.street}, ${business.address.landmark}, in Bahria Town Phase 4, Rawalpindi. It is a short drive from DHA, the other Bahria phases and Islamabad, and every price is published on the prices page.`,
   },
   {
+    q: 'Do you offer male to male massage?',
+    a: 'Yes. Our Full Body Massage for Men is a male to male massage: a male therapist for a male client, in a private room with a towel covering you throughout. It is a professional massage for relaxation and muscle relief, and nothing else.',
+  },
+  {
     q: 'What is the price of a 30 minute massage in Islamabad?',
     a: `At Thai Spa a 30-minute full-body massage is ${formatPrice(rate30)}, and a 30-minute back and neck or foot massage is ${formatPrice(minPrice)}. Every price is on the prices page.`,
   },
