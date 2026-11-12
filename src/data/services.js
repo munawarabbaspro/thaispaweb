@@ -1,7 +1,8 @@
 // Single source of truth for treatments and prices (PKR).
 // Change a number here and the page, the price tables and the JSON-LD all update.
 
-// All seven full-body treatments share this rate card.
+// All full-body treatments share this rate card.
+// TODO: owner to confirm the men's full body massage uses the same rates (assumed, not confirmed).
 export const fullBodyRates = [
   { minutes: 30, price: 3500 },
   { minutes: 40, price: 4000 },
@@ -65,6 +66,14 @@ export const services = [
     name: 'Full Body Massage',
     urdu: 'فل باڈی مساج',
     bestFor: "The standard oil massage — the default if you're unsure",
+    rates: fullBodyRates,
+  },
+  {
+    slug: 'mens-full-body-massage',
+    group: 'full',
+    name: 'Full Body Massage for Men',
+    urdu: 'مردوں کے لیے فل باڈی مساج',
+    bestFor: 'Men who prefer a male therapist: desk-job shoulders, gym soreness, a stiff back',
     rates: fullBodyRates,
   },
 

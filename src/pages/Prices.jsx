@@ -56,14 +56,14 @@ export default function Prices() {
         intro={
           <>
             How much is a massage in Islamabad? This is the whole massage rate list for Thai Spa. The full body massage Islamabad price
-            list is one rate card for all seven treatments, and a 30 minute massage price in Islamabad starts at {formatPrice(minPrice)}.
+            list is one rate card for all full-body treatments, and a 30 minute massage price in Islamabad starts at {formatPrice(minPrice)}.
             Thai massage, deep tissue and the rest all follow the same list. Prices last updated {business.pricesUpdated}, in Pakistani rupees.
           </>
         }
       />
 
       <section className="fleet-browser">
-        <h2 className="section-title">Full-body massages <small>One rate card for all seven</small></h2>
+        <h2 className="section-title">Full-body massages <small>One rate card for all of them</small></h2>
         <div className="rate-tiles">
           {fullBodyRates.map((r) => (
             <div key={r.minutes} className="rate-tile">
@@ -72,7 +72,7 @@ export default function Prices() {
             </div>
           ))}
         </div>
-        <p className="page-intro left" style={{ marginTop: 22 }}>Any of these seven, at these rates:</p>
+        <p className="page-intro left" style={{ marginTop: 22 }}>Any of these, at these rates:</p>
         <ul className="best">
           {fullBodyServices.map((s) => (
             <li key={s.slug}><Link to={`/services/${s.slug}`}>{s.name}</Link></li>

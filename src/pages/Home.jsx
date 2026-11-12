@@ -111,7 +111,7 @@ export default function Home() {
             <h2 className="display"><span className="light">Treatments chosen by</span> <span className="bold">what's wrong</span></h2>
             <div className="row">
               <p className="caps">
-                Looking for a spa in Bahria Town Phase 4, or a spa centre near you with the prices listed? Seven full-body massages
+                Looking for a spa in Bahria Town Phase 4, or a spa centre near you with the prices listed? Our full-body massages
                 share one rate card, plus three targeted treatments from {formatPrice(minPrice)}. We are open seven days, so if you
                 need a massage near you open now, see today's hours on the <Link to="/contact">contact page</Link>.
               </p>

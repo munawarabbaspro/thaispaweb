@@ -59,11 +59,11 @@ export default function Services() {
         crumbs={[{ name: 'Services' }]}
         light="Ten treatments, chosen by"
         bold="what's actually wrong"
-        intro="Seven full-body massages on one shared rate card, and three shorter targeted treatments that make an easy first visit."
+        intro="Full-body massages on one shared rate card, and three shorter targeted treatments that make an easy first visit."
       />
 
       <section className="fleet-browser">
-        <h2 className="section-title">Full-body treatments <small>All seven share the same rates</small></h2>
+        <h2 className="section-title">Full-body treatments <small>All share the same rates</small></h2>
         <table className="rate-table" style={{ marginBottom: 28 }}>
           <tbody>
             {fullBodyRates.map((r) => (

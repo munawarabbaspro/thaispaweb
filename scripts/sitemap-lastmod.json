@@ -1,78 +1,82 @@
 {
   "/": {
-    "hash": "4f14585a4213",
-    "lastmod": "2026-10-09"
+    "hash": "f9c6fac4be8e",
+    "lastmod": "2026-11-12"
   },
   "/blog": {
-    "hash": "8f303fd56608",
-    "lastmod": "2026-10-09"
+    "hash": "f22e64df95c3",
+    "lastmod": "2026-11-12"
   },
   "/about": {
     "hash": "97e02e0e3af4",
     "lastmod": "2026-10-09"
   },
   "/prices": {
-    "hash": "13b4332c9abd",
-    "lastmod": "2026-10-09"
+    "hash": "27e45ffcb635",
+    "lastmod": "2026-11-12"
   },
   "/contact": {
-    "hash": "cfab57268ccf",
-    "lastmod": "2026-10-09"
+    "hash": "423c1e1ef7eb",
+    "lastmod": "2026-11-12"
   },
   "/sitemap": {
-    "hash": "05eb87715e22",
-    "lastmod": "2026-10-09"
+    "hash": "06049c76cfe4",
+    "lastmod": "2026-11-12"
   },
   "/services": {
-    "hash": "18d2e2218355",
-    "lastmod": "2026-10-09"
+    "hash": "afdce060d3b6",
+    "lastmod": "2026-11-12"
   },
   "/services/foot-massage": {
     "hash": "1f738b7b060a",
     "lastmod": "2026-10-09"
   },
   "/services/thai-massage": {
-    "hash": "d3139bf2b3ae",
-    "lastmod": "2026-10-09"
+    "hash": "b791ede653fd",
+    "lastmod": "2026-11-12"
   },
   "/blog/massage-and-sleep": {
     "hash": "6fd7ec48d650",
     "lastmod": "2026-10-08"
   },
   "/services/sports-massage": {
-    "hash": "c05c8b058864",
-    "lastmod": "2026-10-09"
+    "hash": "08b96a918837",
+    "lastmod": "2026-11-12"
   },
   "/services/swedish-massage": {
-    "hash": "92627eb13be9",
-    "lastmod": "2026-10-09"
+    "hash": "39e2138edcb2",
+    "lastmod": "2026-11-12"
   },
   "/services/back-neck-massage": {
     "hash": "473bfe0375c7",
     "lastmod": "2026-10-09"
   },
   "/services/full-body-massage": {
-    "hash": "6aa9b59b7efb",
-    "lastmod": "2026-10-09"
+    "hash": "6df8690fa981",
+    "lastmod": "2026-11-12"
   },
   "/services/hot-stone-massage": {
-    "hash": "d1939493fac6",
-    "lastmod": "2026-10-09"
+    "hash": "7fceebefc017",
+    "lastmod": "2026-11-12"
   },
   "/services/deep-tissue-massage": {
-    "hash": "6d7064a2a7da",
-    "lastmod": "2026-10-09"
+    "hash": "da3021518c2d",
+    "lastmod": "2026-11-12"
   },
   "/services/aromatherapy-massage": {
-    "hash": "b3547bca6b0b",
-    "lastmod": "2026-10-09"
+    "hash": "80fbba75be89",
+    "lastmod": "2026-11-12"
   },
   "/services/head-shoulder-massage": {
     "hash": "92b1ceb3028f",
     "lastmod": "2026-10-09"
   },
+  "/services/mens-full-body-massage": {
+    "hash": "e2f2ff9860b3",
+    "lastmod": "2026-11-12"
+  },
   "/blog/which-massage-for-back-pain": {
-    "hash": "82339f2fa766",
+    "hash": "140089961adb",
     "lastmod": "2026-10-08"
   },
   "/blog/first-massage-what-to-expect": {
@@ -80,7 +84,7 @@
     "lastmod": "2026-10-08"
   },
   "/blog/which-massage-should-i-choose": {
-    "hash": "6cca62473c10",
+    "hash": "f132c99ebf17",
     "lastmod": "2026-10-08"
   },
   "/blog/desk-job-shoulder-pain-islamabad": {
@@ -88,7 +92,7 @@
     "lastmod": "2026-10-08"
   },
   "/blog/how-often-should-you-get-a-massage": {
-    "hash": "eddc65dcd48a",
+    "hash": "063fbb180d94",
     "lastmod": "2026-10-08"
   }
 }

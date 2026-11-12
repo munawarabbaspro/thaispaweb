@@ -30,6 +30,7 @@ export const keywordMap = {
   '/services/hot-stone-massage':   { primary: 'hot stone massage islamabad',     secondary: ['hot stone massage bahria town','hot stone massage benefits','warm stone massage bahria town'] },
   '/services/sports-massage':      { primary: 'sports massage islamabad',        secondary: ['post workout massage islamabad','massage for tight hamstrings','sports massage bahria town'] },
   '/services/full-body-massage':   { primary: 'full body massage islamabad',     secondary: ['full body massage islamabad price list','full body massage bahria town','body massage islamabad'] },
+  '/services/mens-full-body-massage': { primary: 'full body massage for men islamabad', secondary: ['men full body massage bahria town','massage for men islamabad','male therapist massage islamabad','relaxing massage for men bahria town'] },
   '/services/head-shoulder-massage':{primary: 'head and shoulder massage bahria town', secondary: ['head massage islamabad','neck and shoulder massage bahria town','massage for headache islamabad'] },
   '/services/back-neck-massage':   { primary: 'back and neck massage bahria town', secondary: ['back massage islamabad','massage for back pain islamabad','massage for stiff neck'] },
   '/services/foot-massage':        { primary: 'foot massage bahria town',        secondary: ['foot massage islamabad','foot reflexology islamabad','tired legs massage islamabad'] },

@@ -22,6 +22,7 @@ const spec = {
   'hot-stone-massage': [1600, 1000, 'Therapist placing warm dark stones along the back of a client'],
   'sports-massage': [1600, 1000, 'Therapist massaging the calf of a client lying face down in athletic shorts'],
   'full-body-massage': [1600, 1000, 'Massage therapist applying oil to the back of a client covered with a towel'],
+  'mens-full-body-massage': [1600, 1000, 'Massage therapist applying oil to the back of a client covered with a towel'],
   'head-shoulder-massage': [1600, 1000, 'Massage therapist working on the shoulders of a seated client'],
   'back-neck-massage': [1600, 1000, 'Therapist spreading oil across the back and neck of a client'],
   'sleep-male': [1100, 760, 'Client asleep on a white pillow with lavender sprigs and an aroma oil bottle beside him'],

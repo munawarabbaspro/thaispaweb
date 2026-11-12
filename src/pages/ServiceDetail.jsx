@@ -21,7 +21,9 @@ export default function ServiceDetail() {
 
   const full = service.group === 'full'
   const from = fromPrice(service)
-  const description = `${service.name} in ${serviceLocation(slug)} at Thai Spa, Civic Center Bahria Town Phase 4. ${service.bestFor}. From ${formatPrice(from)} for ${service.rates[0].minutes} minutes.`
+  const description = c.metaLead
+    ? `${c.metaLead} From ${formatPrice(from)} for ${service.rates[0].minutes} minutes.`
+    : `${service.name} in ${serviceLocation(slug)} at Thai Spa, Civic Center Bahria Town Phase 4. ${service.bestFor}. From ${formatPrice(from)} for ${service.rates[0].minutes} minutes.`
   // H1 uses the searched wording (the menu calls it "Swedish Relaxing Massage"; people search "swedish massage")
   const h1Name = slug === 'swedish-massage' ? 'Swedish Massage' : service.name
   const words = `${h1Name} in ${serviceLocation(slug)}`.split(' ')
@@ -67,7 +69,7 @@ export default function ServiceDetail() {
               <div>
                 <span className="from">{service.rates.length > 1 ? 'from' : ''} {service.rates[0].minutes} minutes</span>
                 <strong>{formatPrice(from)}</strong>
-                <small>{full ? 'Same rate for all seven full-body massages' : 'Targeted treatment'}</small>
+                <small>{full ? 'Same rate for all full-body massages' : 'Targeted treatment'}</small>
               </div>
               <Button href={book(service.rates[0].minutes)}>Book on WhatsApp</Button>
             </div>
@@ -123,7 +125,7 @@ export default function ServiceDetail() {
             </table>
             <p className="note">
               {full
-                ? `All seven full-body massages share these rates. Prices updated ${business.pricesUpdated}.`
+                ? `All full-body massages share these rates. Prices updated ${business.pricesUpdated}.`
                 : `Prices updated ${business.pricesUpdated}.`}
             </p>
           </div>

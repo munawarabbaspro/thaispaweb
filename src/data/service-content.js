@@ -125,7 +125,26 @@ export const content = {
     ],
     skip: ['You have a skin condition or open wound over the area to be worked'],
     aftercare: 'Drink a glass of water and keep the evening light so the relaxed feeling carries on.',
-    related: ['swedish-massage', 'deep-tissue-massage', 'thai-massage'],
+    related: ['swedish-massage', 'deep-tissue-massage', 'mens-full-body-massage'],
+  },
+  'mens-full-body-massage': {
+    metaLead: "Men's full body massage in Islamabad by a male therapist, Thai Spa, Civic Center, Bahria Town Phase 4. Private rooms, open 7 days.",
+    // TODO: owner to confirm a male therapist is on every shift before this page is promoted in ads.
+    intro: [
+      "The Full Body Massage for Men is our standard oil massage for male clients, given by a male therapist. It covers the back, shoulders, arms, legs and feet with warm oil, flowing strokes and steady kneading, and you can ask for firmer or lighter pressure at any point.",
+      "Many men simply feel more at ease with a male therapist, and that is a fair reason to book this one. It suits tight shoulders from desk work, sore legs after the gym or a cricket match, and a stiff back after long drives. You stay covered with a towel in a private room.",
+    ],
+    note: 'This is a professional massage for relaxation and muscle relief, and nothing else. A towel covers you throughout, only the area being worked is uncovered, and we will leave out any area you ask us to.',
+    best: ['Men who prefer a male therapist', 'Desk-job shoulders and neck', 'Gym or cricket soreness', 'A stiff back after long drives', 'Tired, heavy legs', 'A medium-pressure all-round session'],
+    steps: [
+      'We start with two minutes of questions: where you feel tight, anything to avoid, and how firm you like it.',
+      'You lie on the table under a towel in a private room, and we uncover one area at a time.',
+      'The male therapist works the back, shoulders, arms, legs and feet with warm oil, adjusting the pressure to what you tell us.',
+      'The last minutes are slow, and you get time to sit up and drink water before you stand.',
+    ],
+    skip: ['You have a skin condition or open wound over the area to be worked'],
+    aftercare: 'Drink a glass of water and keep the evening light so the looser feeling carries into tomorrow.',
+    related: ['deep-tissue-massage', 'sports-massage', 'full-body-massage'],
   },
   'head-shoulder-massage': {
     intro: [
@@ -195,7 +214,9 @@ export const leads = {
   'sports-massage':
     'Sports massage in Islamabad is for people who train. Thai Spa offers post workout massage in Bahria Town Phase 4 for heavy legs and tight hamstrings, whether you lift, run or play cricket.',
   'full-body-massage':
-    'Full body massage in Islamabad at Thai Spa is our standard oil massage. The full body massage Islamabad price list is on the [prices page](/prices), and the same rates apply to all seven full-body massages in Bahria Town.',
+    'Full body massage in Islamabad at Thai Spa is our standard oil massage. The full body massage Islamabad price list is on the [prices page](/prices), and the same rates apply to all of our full-body massages in Bahria Town.',
+  'mens-full-body-massage':
+    "Full body massage for men in Islamabad at Thai Spa, Bahria Town Phase 4, is given by a male therapist in a private room. It uses the same rates as every full-body massage, listed on the [prices page](/prices).",
   'head-shoulder-massage':
     'Head and shoulder massage in Bahria Town at Thai Spa covers the scalp, neck and shoulders. A thirty-minute head massage in Islamabad is a short, easy way to start, and neck and shoulder work is included.',
   'back-neck-massage':
